@@ -14,11 +14,13 @@ jobs:
             - name: run shell script
               run: bash script.sh
         
-            - name: upload artifact
-              uses: actions/upload-artfact@v4.3.4
+                          
+
+            - name: Upload a Build Artifact
+              uses: actions/upload-artifact@v4.3.4
               with:
                 name: ${{ env.name-of-artifact }}
                 path: ./my-artifact.txt
-
+          
 
     
