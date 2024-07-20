@@ -1,0 +1,24 @@
+name: artfact uploader
+
+on: [push]
+
+env:
+    name-of-artifact: my-artifact
+
+jobs:
+    create-artifact:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: run shell script
+              run: bash script.sh
+        
+            - name: upload artifact
+              uses: actions/upload-artfact
+              with:
+                name: ${{ env.name-of-artifact }}
+                path: ./my-artifact.txt
+
+
+    
